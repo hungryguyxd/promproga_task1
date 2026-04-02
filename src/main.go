@@ -47,6 +47,7 @@ func logHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "давай по новой", http.StatusBadRequest)
 		return
 	}
+	log.Println(mes.Message)
 	f, err := os.OpenFile(path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		http.Error(w, "печалька", http.StatusInternalServerError)
