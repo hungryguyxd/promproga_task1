@@ -21,7 +21,7 @@ spec:
               while true; do
                 echo "логи логи логи логи логи"
                 find /logs -type f -exec cat {} \;
-                sleep 10
+                sleep 3
               done
           volumeMounts:
             - name: logs
