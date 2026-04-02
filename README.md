@@ -10,6 +10,22 @@ minikube start
 chmod +x deploy.sh
 ```
 
+```
+./deploy.sh
+```
+После этого можно использовать
+```
+kubectl port-forward service/service-lol 8080:80
+```
+и в другом терминале использовать команды
+```
+curl localhost:8080/logs
+
+curl localhost:8080/
+
+curl -X POST localhost:8080/log -H "Content-Type: application/json" -d '{"message":"hello world"}'
+```
+
 ![Балансировка](pictures/balance.png)
 
 ![крон](pictures/cronjob.png)
